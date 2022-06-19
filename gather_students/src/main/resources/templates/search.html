@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Thông tin chi tiết</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+
+</head>
+<body>
+<div class="container">
+    <h1> TRA CỨU THÔNG TIN TUYỂN SINH </h1>
+
+    <form th:action="@{/search}" method="post" class="form-example">
+        <div class="row">
+            <label for="name">Họ tên</label>
+            <input type="text" id="name" name="name"></br>
+
+        </div>
+        <div class="row">
+            <label for="code">Mã học sinh</label>
+            <input type="text" id="code" name="code"></br>
+        </div>
+        <div class="row">
+            <label for="submitBtn"></label>
+            <input type="submit" id="submitBtn" value="Tìm kiếm">
+        </div>
+
+
+    </form>
+
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Trường</th>
+            <th>Quận/Huyện</th>
+            <th>Mã học sinh</th>
+            <th>Lớp</th>
+            <th>Họ và tên</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Nơi sinh</th>
+            <th>Dân tộc</th>
+            <th>Hộ khẩu</th>
+            <th>Điện thoại</th>
+            <th>Tổng điểm lớp 1</th>
+            <th>Tổng điểm lớp 2</th>
+            <th>Tổng điểm lớp 3</th>
+            <th>Tổng điểm lớp 4</th>
+            <th>Tổng điểm lớp 5</th>
+            <th>Tổng điểm kết quả 5 năm</th>
+            <th>Điểm ưu tiên</th>
+            <th>Tổng điểm sơ tuyển</th>
+            <th>Ghi chú</th>
+
+        </tr>
+        <th:block th:each="obj: ${students}">
+            <tr>
+                <td th:text="${obj.id}"></td>
+                <td th:text="${obj.school}"></td>
+                <td th:text="${obj.district}"></td>
+                <td th:text="${obj.code}"></td>
+                <td th:text="${obj.className}"></td>
+                <td th:text="${obj.name}"></td>
+                <td th:text="${obj.dob}"></td>
+                <td th:text="${obj.sex}"></td>
+                <td th:text="${obj.birthplace}"></td>
+                <td th:text="${obj.ethnic}"></td>
+                <td th:text="${obj.address}"></td>
+                <td th:text="${obj.telephone}"></td>
+                <td th:text="${obj.score1}"></td>
+                <td th:text="${obj.score2}"></td>
+                <td th:text="${obj.score3}"></td>
+                <td th:text="${obj.score4}"></td>
+                <td th:text="${obj.score5}"></td>
+                <td th:text="${obj.totalScore5}"></td>
+                <td th:text="${obj.priorityScore}"></td>
+                <td th:text="${obj.totalScore}"></td>
+                <td th:text="${obj.note}"></td>
+            </tr>
+
+
+        </th:block>
+
+    </table>
+
+</div>
+
+</body>
+</html>
