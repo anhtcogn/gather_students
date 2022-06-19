@@ -42,8 +42,5 @@ public class StudentController {
         studentService.importToDB(files);
         return "redirect:search";
     }
-
-
-
 }
 

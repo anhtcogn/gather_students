@@ -44,7 +44,7 @@ public class StudentService {
             XSSFRow row = ws.getRow(i);
             student.setSchool(row.getCell(1).getStringCellValue());
             student.setDistrict(row.getCell(2).getStringCellValue());
-            student.setCode(row.getCell(3).getStringCellValue());
+            student.setCode(row.getCell(3).getStringCellValue().replace(" ", ""));
             student.setClassName(row.getCell(4).getStringCellValue());
             student.setName(row.getCell(5).getStringCellValue());
             student.setDob(row.getCell(6).getStringCellValue() + "/"

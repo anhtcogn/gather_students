@@ -4,16 +4,12 @@
     <meta charset="UTF-8"/>
     <title>Thông tin chi tiết</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-    <!--css-->
-<!--    <link th:href="@{/css/style.css}" rel="stylesheet"/>-->
-    <!--js-->
-
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
 <div class="container">
-    <h3> TRA CỨU THÔNG TIN TUYỂN SINH </h3>
+    <h1> TRA CỨU THÔNG TIN TUYỂN SINH </h1>
 
     <form th:action="@{/search}" method="post" class="form-example">
         <div class="row">
@@ -22,8 +18,8 @@
 
         </div>
         <div class="row">
-            <label for="studentCode">Mã học sinh</label>
-            <input type="text" id="studentCode" name="studentCode"></br>
+            <label for="code">Mã học sinh</label>
+            <input type="text" id="code" name="code"></br>
         </div>
         <div class="row">
             <label for="submitBtn"></label>
@@ -78,25 +74,19 @@
                 <td th:text="${obj.score4}"></td>
                 <td th:text="${obj.score5}"></td>
                 <td th:text="${obj.totalScore5}"></td>
-                <td th:text="${obj.totalScore}"></td>
                 <td th:text="${obj.priorityScore}"></td>
+                <td th:text="${obj.totalScore}"></td>
                 <td th:text="${obj.note}"></td>
-<!--                <td th:text="${#dates.format(obj.birthday, 'dd-MM-yyyy')}"></td>-->
-
             </tr>
 
 
         </th:block>
 
     </table>
-    <footer>
-        <!-- Copyright -->
-        <div style="background-color: #01904a;">
-            Master Dev 4 2022
-        </div>
-        <!-- Copyright -->
-    </footer>
-</div>
 
+</div>
+<footer style="background: PapayaWhip">
+    Trang tra cứu thông tin tuyển sinh
+</footer>
 </body>
 </html>
